@@ -24,6 +24,8 @@
 4. 编译： XeLaTeX → BibTeX → XeLaTeX → XeLaTeX
 5. 生成的 `article.pdf` 即为最终论文
 
+- 编译前请将华科校徽文件 `HUSTGreen.eps` 放入项目根目录。该文件可从 [hust-latex/hustthesis](https://github.com/hust-latex/hustthesis) 仓库下载，也可从学校本科生院网站下载毕业设计模板包获取
+
 ## 字体说明
 
 **本模板不包含中文字体文件**，需要使用者自行准备。默认配置调用 Windows 系统自带的宋体和黑体。
