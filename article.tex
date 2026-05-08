@@ -1,0 +1,211 @@
+% !TeX program = xelatex
+%===========================================
+% 华中科技大学本科毕业设计（论文）模板
+% 编译方式：XeLaTeX
+% 模板：HustGraduPaper v2.1.7
+%===========================================
+
+\documentclass[supercite]{HustGraduPaper}
+
+%进行个人信息设置
+\title{论文题目}
+\author{姓名}
+\date{\today}
+\school{院系名称}
+\classnum{班级}
+\stunum{学号}
+\instructor{导师姓名\quad{}职称}
+
+%添加自己要用的其他宏包
+\usepackage{xltxtra}
+\usepackage{bm}
+\usepackage{amsfonts}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,calc,shapes.geometric}
+
+%预置流程图配色与样式
+\definecolor{figBlue}{RGB}{222,235,247}
+\definecolor{figGreen}{RGB}{226,239,218}
+\definecolor{figYellow}{RGB}{255,242,204}
+\definecolor{figOrange}{RGB}{252,228,214}
+\definecolor{figPurple}{RGB}{234,224,244}
+\definecolor{figLine}{RGB}{75,90,110}
+\tikzset{
+	flowbox/.style={
+		draw=figLine,
+		rounded corners=2pt,
+		line width=0.8pt,
+		align=center,
+		font=\footnotesize,
+		text width=3.0cm,
+		minimum height=0.9cm,
+		fill=figBlue
+	},
+	smallbox/.style={
+		flowbox,
+		font=\scriptsize,
+		text width=2.6cm,
+		minimum height=0.78cm
+	},
+	groupbox/.style={
+		draw=figLine,
+		rounded corners=3pt,
+		line width=0.9pt,
+		inner sep=6pt,
+		fill=figYellow
+	},
+	regionbox/.style={
+		draw=figLine,
+		dashed,
+		rounded corners=4pt,
+		line width=0.8pt,
+		inner xsep=12pt,
+		inner ysep=12pt
+	},
+	flowarrow/.style={
+		-{Stealth[length=2.3mm]},
+		line width=0.8pt,
+		draw=figLine
+	}
+}
+
+\begin{document}
+	%生成标题页
+	\maketitle
+	
+	%生成声明与授权书页
+	\statement
+	
+	\clearpage
+	\pagenumbering{Roman}
+	
+	%填写中文摘要内容和关键字
+	\begin{cnabstract}{关键词1；关键词2；关键词3；关键词4；关键词5}
+		请在此处填写中文摘要内容。摘要应简要说明研究问题、采用的方法、主要结果和结论。通常包括研究背景、研究目的、方法描述、主要发现和研究意义等要素。
+	\end{cnabstract}
+	
+	%填写英文摘要内容和关键字
+	\begin{enabstract}{keyword1; keyword2; keyword3; keyword4; keyword5}
+		Please fill in the English abstract here. The abstract should briefly describe the research problem, methods, main results, and conclusions. It typically includes research background, objectives, method description, main findings, and significance.
+	\end{enabstract}
+	
+	%生成目录
+	\tableofcontents
+	
+	\clearpage
+	\pagenumbering{arabic}
+	
+	% ===================== 第1章 绪论 =====================
+	\section{绪论}
+	
+	\subsection{研究背景与意义}
+	
+	\subsubsection{研究背景}
+	
+	请在此处填写研究背景。介绍本研究领域的发展现状、面临的主要问题，以及开展本研究的必要性和紧迫性。引用相关文献以支撑论述。
+	
+	\subsubsection{面临的技术挑战}
+	
+	请在此处详细阐述当前研究面临的关键技术挑战。可以分条列举，每一条说明一个具体问题。
+	
+	\subsubsection{本文的研究思路}
+	
+	请在此处说明本文的研究思路和主要技术路线。阐述你选择的研究方法及其合理性。
+	
+	\subsection{国内外研究现状}
+	
+	\subsubsection{方法类别一}
+	
+	请在此处介绍该方法的原理、代表性工作和优缺点。
+	
+	\subsubsection{方法类别二}
+	
+	请在此处介绍该方法的原理、代表性工作和优缺点。
+	
+	\subsubsection{方法类别三}
+	
+	请在此处介绍该方法的原理、代表性工作和优缺点。
+	
+	\subsubsection{现有研究的总结}
+	
+	请在此处对现有研究进行总结，指出各种方法的优势和局限，说明本文方法的定位。
+	
+	\subsection{本文研究内容与章节安排}
+	
+	请在此处列出本文的主要研究内容，并说明后续各章节的安排。
+	
+	% ===================== 第2章 基础理论 =====================
+	\section{基础理论}
+	
+	\subsection{流程图绘制示例}
+	
+	本模板已预置 TikZ 流程图样式，用户可直接使用 \verb|flowbox| 和 \verb|flowarrow| 命令绘制统一风格的流程图。以下为一个简单的三步骤流程示例：
+	
+	\begin{generalfig}[htb]{三步骤流程图示例}{fig:tikz_example}
+		\centering
+		\begin{tikzpicture}
+			\node[flowbox, fill=figBlue] (step1) at (0,0) {步骤一\\数据预处理};
+			\node[flowbox, fill=figYellow] (step2) at (4,0) {步骤二\\模型训练};
+			\node[flowbox, fill=figGreen] (step3) at (8,0) {步骤三\\结果评估};
+			\draw[flowarrow] (step1) -- (step2);
+			\draw[flowarrow] (step2) -- (step3);
+		\end{tikzpicture}
+	\end{generalfig}
+	
+	用户可根据实际需求调整节点内容、位置和配色。预定义的配色方案包括 \verb|figBlue|、\verb|figGreen|、\verb|figYellow|、\verb|figOrange| 和 \verb|figPurple|，均为浅色系，适合学术论文插图。
+	
+	请在此处继续展开基础理论的介绍，包括数学建模、公式推导和关键概念说明。
+	
+	% ===================== 第3章 方法设计 =====================
+	\section{方法设计}
+	
+	请在此处详细描述提出的方法，包括整体框架、各步骤细节和参数配置。
+	
+	% ===================== 第4章 实验结果与分析 =====================
+	\section{实验结果与分析}
+	
+	\subsection{实验数据与设置}
+	
+	请在此处介绍实验数据来源、实验设置和评估指标。
+	
+	\subsection{定量评估结果}
+	
+	请在此处展示定量评估结果，使用表格或图表呈现数据。
+	
+	\subsection{定性可视化分析}
+	
+	请在此处展示可视化结果，配以文字说明。
+	
+	\subsection{结果分析与讨论}
+	
+	请在此处对实验结果进行深入分析和讨论。
+	
+	% ===================== 第5章 总结与展望 =====================
+	\section{总结与展望}
+	
+	\subsection{全文工作总结}
+	
+	请在此处总结全文的主要工作内容和贡献。
+	
+	\subsection{未来工作展望}
+	
+	请在此处展望未来可以继续深入的方向。
+	
+	%生成致谢
+	\begin{thankpage}
+		请在此处填写致谢内容。感谢导师、实验室同学、家人朋友等的支持和帮助。
+	\end{thankpage}
+	
+	%生成参考文献
+	\bibliography{mybib}
+	
+	%附录
+	\begin{appendices}
+		\section{附录标题}
+		
+		请在此处填写附录内容，如核心代码、补充数据等。
+	\end{appendices}
+	
+\end{document}

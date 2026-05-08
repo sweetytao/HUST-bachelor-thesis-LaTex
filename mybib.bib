@@ -1,0 +1,104 @@
+% Encoding: UTF-8
+% ===== 参考文献模板说明 =====
+% 本文件为参考文献格式示例，请根据实际引用文献进行替换。
+% 每条文献的引用键 (如 zitova2003) 需与正文 \cite{} 命令一致。
+%
+% 常用文献类型标识：
+% @article        - 期刊论文
+% @inproceedings  - 会议论文
+% @book           - 专著/图书
+% @phdthesis      - 博士学位论文
+% @mastersthesis  - 硕士学位论文
+%
+% 英文作者格式：姓在前（全称），名在后（缩写，可保留全名）
+%   示例：author = {Smith, John and Zhang, Wei}
+%
+% 中文作者格式：直接写全名，姓和名不颠倒
+%   示例：author = {张三 and 李四}
+%
+% 更多格式说明请参考 GB/T 7714-2015 标准或 BibTeX 语法文档。
+
+% ---【英文期刊论文示例】---
+% 完整格式：作者、标题、期刊名、年份、卷号(期号)、页码、DOI（可选）
+@article{example_journal,
+  author    = {First author},
+  title     = {Full title of the journal article},
+  journal   = {Journal Name},
+  year      = {2000},
+  volume    = {1},
+  number    = {1},
+  pages     = {1--10},
+  doi       = {10.0000/example.2000.00001}
+}
+
+% ---【英文会议论文示例】---
+% 完整格式：作者、标题、会议论文集名称、年份、页码
+@inproceedings{example_conference,
+  author    = {First author},
+  title     = {Full title of the conference paper},
+  booktitle = {Proceedings of the XXX International Conference on XXX},
+  year      = {2000},
+  pages     = {1--6}
+}
+
+% ---【英文综述论文示例】---
+@article{example_review,
+  author    = {First author},
+  title     = {A survey on some research area},
+  journal   = {Journal Name},
+  year      = {2020},
+  volume    = {1},
+  number    = {1},
+  pages     = {1--20},
+  doi       = {10.0000/example.2020.00002}
+}
+
+% ---【英文专著/图书示例】---
+@book{example_book,
+  author    = {First author},
+  title     = {Title of the Book},
+  publisher = {Publisher Name},
+  year      = {2000},
+  edition   = {2nd ed.},
+  address   = {City, Country}
+}
+
+% ---【英文博士学位论文示例】---
+@phdthesis{example_phd,
+  author    = {First author},
+  title     = {Title of the {PhD} Dissertation},
+  school    = {University Name},
+  year      = {2000}
+}
+
+% ---【中文期刊论文示例】---
+% 完整格式：作者、标题、期刊名、年份、卷号(期号)、页码、DOI（可选）
+% 中文文献的引用键建议使用英文，以便在正文中 \cite{example_chinese_journal} 引用
+@article{example_chinese_journal,
+  author    = {作者一 and 作者二 and 作者三},
+  title     = {中文期刊论文标题},
+  journal   = {期刊名称},
+  year      = {2000},
+  volume    = {1},
+  number    = {1},
+  pages     = {1--10},
+  doi       = {10.0000/example.2000.00003}
+}
+
+% ---【中文学位论文示例】---
+@mastersthesis{example_chinese_thesis,
+  author    = {作者},
+  title     = {学位论文标题},
+  school    = {大学名称},
+  year      = {2000}
+}
+
+% ---【其他文献类型示例】---
+
+% 预印本/在线资源
+@article{example_preprint,
+  author    = {First author},
+  title     = {Title of the preprint},
+  journal   = {arXiv preprint arXiv:0000.00000},
+  year      = {2000}
+}
